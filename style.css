@@ -258,9 +258,6 @@ button.border-vermilion {
 .arrow  {
     position: absolute;
     top: 175px;
-    margin-top: -16px;
-    width: 20px;
-    height: 32px;
     font-size: 56px;
     color: rgb(255,62,17);
 }
@@ -510,6 +507,7 @@ footer > div {
 
 .external-links li{
     margin-left: 50px;
+    display: block;
 }
 .external-links li:first-child{
     margin-left: 0px;
@@ -530,4 +528,291 @@ footer > div {
 
 .external-links .payments li:first-child{
     margin-right: 30px;
+}
+
+@media only screen and (max-device-width: 768px) {
+    
+    .top-bar {
+        position: relative;
+    }
+
+    .top-bar .left-sided {
+        float: none;
+    } 
+
+    .top-bar .fa {
+        font-size: 36px;
+        margin-right: 10px;
+    }
+
+    .top-bar button {
+        margin: 0 25px;
+        font-size: 36px;
+    }
+    .contacts {
+        border-bottom: 3px solid #EEE;
+    }
+
+    .contacts li {
+        font-size: 32px;
+        margin-top: 20px;
+    }
+    .top-bar .left-sided {
+        float: none;
+    }
+    .main-logo img {
+        width: 745px;
+    }
+    .right-sided {
+        margin: 40px 0;
+    }   
+    .main-nav-tab {
+        top: 0px;
+    }
+    .main-nav-tab li {
+        margin-right: 30px;
+        font-size: 42px;
+    }
+
+    .home {
+        background-size: 30%;
+        margin-top: 0px;
+    }
+
+    .home div {
+        margin: 80px 30px;
+        width: auto;
+    }
+    .home .row {
+        margin: 80px 30px;
+        width: auto;
+    }
+
+    .home h1 {
+        line-height: 1.5;
+        width: 710px;
+    }
+ 
+    .home p {
+        line-height: 1.5;
+        max-width: 755px;
+        font-size: 36px;
+        margin-top: 40px;
+    }
+    
+    h1 {
+        font-size: 72px;
+    }
+    p {
+        font-size: 20px;
+    }
+
+    button.filled-vermilion {
+        padding: 20px 100px;
+        font-size: 42px;
+    }
+
+
+    .dates ul {
+        padding: 35px 80px;
+    }
+
+    .dates li {
+        margin: 0;
+        margin-top: 30px;
+        display: block;
+        font-size: 14px;
+    }
+
+    .dates li span:last-child {
+        margin-left: 350px;
+    }
+    .dates li:last-child {
+        border: none;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+    .dates li:last-child span:last-child {
+        margin-left: 92px;
+    }
+
+    .about p {
+        margin-top: 50px;
+        line-height: 1.75;
+    }
+
+    .about .row,
+    .levels .row,
+    .testimonials .row,
+    .certified-users .row {
+        padding: 70px 100px;
+    }
+
+    .certified-users .card {
+        margin: 50px 15px;
+        width: 620px;
+        height: 1020px;
+    }
+    .certified-users .card img {
+        width: 330px;
+        height: 460px;
+        border: 3px solid;
+        margin-left: -200px;
+        top: 130px;
+    }
+    .certified-users .card .name-plat {
+        top: 640px;
+        left: 50%;
+        width: 410px;
+        margin-left: -202px;
+        font-size: 38px;
+        line-height: 1.5;
+    }
+    .certified-users .card .certificate {
+        top: 860px;
+        width: 420px;
+        font-size: 42px;
+        margin-left: -200px;
+    }
+    .color-logo span {
+        width: 22px;
+        height: 22px;
+        margin-right: 6px;
+    }
+
+    .external-links .left-sided,
+    .external-links .right-sided {
+        float: none;
+    }
+
+    .external-links li{
+        margin-left: 10px;
+    }
+    .external-links .right-sided {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .socials {
+        text-align: center;
+        padding: 60px 0;
+    }
+    .socials h5 {
+        font-size: 42px;
+    }
+    .socials ul {
+        margin-top: 55px;
+    }
+    .socials li {
+        margin: 0 20px;
+    }
+    .fa {
+        font-size: 60px;
+    }
+
+    .footer-nav {
+        padding: 70px 50px 20px;
+        font-size: 48px;
+    }
+    .footer-nav ul {
+        display: block;
+        text-align: center;
+    }
+    .footer-nav li:first-child {
+        margin-left: 0px;
+        width: auto;
+
+    }
+    .footer-nav li {
+        margin-top: 50px;
+        display: block;
+    }
+    .footer-nav img {
+        width: 172px;
+    }
+
+    .external-links {
+        padding: 100px 50px 35px;
+        font-size: 48px;
+        text-align: center;
+    }
+    .external-links .left-sided, .external-links .right-sided {
+        float: none;
+    }
+    .external-links ul {
+        display: block;
+        text-align: center;
+    }
+    .external-links li:first-child {
+        margin-left: 0px;
+        width: auto;
+    }
+    .external-links li {
+        margin-top: 50px; 
+    }
+
+    .external-links .right-sided {
+        font-size: 48px;
+        text-align: center;
+        margin-top: 180px;
+    }
+    .external-links .payments li:first-child {
+        margin-right: 0;
+        width: auto;
+    }
+    .external-links .payments img {
+        width: 480px;
+    }
+    .external-links .logo img {
+        width: 280px;
+    }
+  }
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .main-nav-tab {
+        top: 40px;
+    }
+    .home div {
+        margin: 80px 30px;
+        width: auto;
+    }
+    .home .row {
+        margin: 80px 30px;
+        width: auto;
+    }
+    h1 {
+        font-size: 32px;
+    }
+    p {
+        font-size: 20px;
+    }
+
+    .dates ul {
+        padding: 15px 80px;
+    }
+
+    .about .row,
+    .levels .row,
+    .testimonials .row,
+    .certified-users .row {
+        padding: 70px 80px;
+    }
+
+    .external-links .left-sided,
+    .external-links .right-sided {
+        float: none;
+    }
+
+    .external-links li{
+        margin-left: 10px;
+    }
+    .external-links .right-sided {
+        display: block;
+        margin-top: 30px;
+    }
 }
