@@ -1,0 +1,533 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body{
+	font-size: 20px;
+    overflow-x: hidden;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: lighter;
+}
+
+h1 {
+    font-size: 42px;
+    letter-spacing: 2px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.row {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.clearfix:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0px;
+    clear: both;
+}
+
+.top-bar {
+    position: fixed;
+    background-color:#fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+    box-shadow: 1px 1px 10px 1px #ccc;
+}
+
+.top-bar .clearfix {
+    padding: 20px 50px;
+}
+.contacts {
+    border-bottom: 1px solid #EEE;
+}
+.contacts li {
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.top-bar button {
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.left-sided {
+    float: left;
+}
+
+.right-sided {
+    float: right;
+}
+
+.main-logo img{
+    width: 375px;
+    margin-left: -6px;
+}
+
+li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 5px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.main-nav-tab {
+    position: relative;
+    top: 50px;
+    font-size: 18px;
+}
+
+.main-nav-tab li {
+    margin-right: 30px;
+}
+.main-nav-tab li:last-child {
+    margin-right: 0px;
+}
+
+button.filled-vermilion {
+    margin-top: 50px;
+    padding: 10px 40px;
+    background: rgb(255,62,17);
+    color: white;
+    border: none;
+    display: block;
+    font-size: 18px;
+}
+
+button.border-vermilion {
+    padding: 10px 40px;
+    border: 2px solid rgb(255,62,17);
+    background: none;
+}
+
+.black-bg {
+    background: rgb(47, 47, 47);
+    color: #FFF;
+}
+.home {
+    margin-top: 205px;
+    text-align: center;
+    background-color: #F1F1F1;
+    background-image: url(assets/home-bg.png);
+    background-position-x:90%;
+    background-position-y:bottom;
+    background-repeat: no-repeat;
+    background-size: 15%;
+}
+.home div {
+    margin: 160px 0;
+    display: inline-block;
+    text-align:left;
+    width: 100%;
+}
+.home h1 {
+    line-height: 2;
+}
+.home p {
+    line-height: 1.5;
+    max-width: 825px;
+}
+
+.dates ul {
+    padding: 15px 0;
+}
+.dates li {
+    margin: 0px;
+}
+.dates li span:last-child {
+    margin-left: 35px;
+}
+.dates li:last-child {
+    border-left: 1px solid #ccc;
+    padding-left: 40px;
+    margin-left: 40px;
+}
+
+.about {
+    background: #F4F6F8;
+}
+.about .row {
+    padding: 100px 0 75px;
+}
+
+.about h1{
+    text-align: center; 
+}
+.about p{
+    margin-top: 20px;
+    line-height: 1.5; 
+}
+
+
+.levels .row {
+    padding: 100px 0 75px;
+}
+
+.levels h1,
+.levels .tabs {
+    text-align: center;
+}
+
+.levels .tabs {
+    margin: 25px;
+    position: relative;
+}
+
+.levels .tabs li {
+    width: 140px;
+    position: absolute;
+    left: 50%;
+    margin-left: -70px;
+    text-align: center;
+}
+
+.levels .tabs li:first-child {
+    margin-left: -270px;
+    text-align: right;
+}
+
+.levels .tabs li:last-child {
+    margin-left: 200px;
+    text-align: left;
+}
+
+.levels .content {
+    margin-top: 80px;
+}
+.levels .content .row {
+    display: flex;
+    padding: 50px 0;
+}
+
+.levels .content .col {
+    width: 50%;
+}
+
+.highlight {
+    color: rgb(232, 28, 28)
+}
+.note {
+    background: rgb(253, 237, 170);
+    padding: 25px 35px;
+    display: inline-block;
+    width: 450px;
+} 
+.note p {
+    margin: 10px 0;
+} 
+
+
+.testimonials{
+    background: #F1F1F1;
+}
+
+
+.testimonials .row {
+    padding: 100px 0 75px;
+}
+
+.testimonials h1,
+.testimonials p {
+    text-align: center;
+}
+
+.testimonials p {
+    margin-top: 20px;
+}
+.carousel-wrap {
+    position: relative;
+    margin-top: 50px;
+}
+.nav-button {
+    position: relative;
+    width: 100%;
+}
+
+.arrow  {
+    position: absolute;
+    top: 175px;
+    margin-top: -16px;
+    width: 20px;
+    height: 32px;
+    font-size: 56px;
+    color: rgb(255,62,17);
+}
+.left-arrow {
+    left: 0px;
+}
+.right-arrow {
+    right: 0px;
+}
+
+.slide {
+    position: relative;
+    width: 751px;
+    height: 371px;
+    box-shadow: 0px 1px 10px 1px #ccc;
+    margin: 0 auto;
+}
+.slide::before, 
+.slide::after {
+    content: ' ';
+    position:absolute;
+    height: 100%;
+    top: 0px;
+    z-index: 0;
+}
+
+.slide::before {
+    width: 20%;
+    left: 0px;
+    background: #F7F7F7;
+}
+.slide::after {
+    width: 80%;
+    background: #FFF;
+    left: 20%;
+}
+
+.slide img {
+    position: absolute;
+    left: 20%;
+    top: 35%;
+    margin-left: -65px;
+    width: 108px;
+    height: 150px;
+    border: 1px solid;
+    z-index: 1;
+}
+
+.slide-data {
+    position: absolute;
+    left: 25%;
+    z-index: 1;
+    top: 20px;
+    padding: 30px;
+    line-height: 1.5;
+}
+
+.slide-data p {
+    text-align: left;
+    width: 480px;
+}
+
+.slide-data .name-plat {
+    padding: 20px 0 10px;
+    border-bottom: 1px solid;
+    margin-bottom: 10px;
+}
+
+.testimonials .color-logo {
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+    bottom: 30px;
+}
+
+
+.certified-users .row {
+    padding: 100px 0 75px;
+}
+
+.certified-users h1,
+.certified-users p {
+    text-align: center;
+}
+
+.certified-users p {
+    margin-top: 20px;
+}
+.certified-users .grid {
+    display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.certified-users .card {
+    position: relative;
+    margin: 30px 15px;
+    width: 250px;
+    height: 430px;
+    box-shadow: 0px 1px 11px 0px #ccc;
+}
+
+.certified-users .card:first-child {
+    display: inline-block;
+}
+
+
+.certified-users .card::before, 
+.certified-users .card::after {
+    content: ' ';
+    position:absolute;
+    width: 50%;
+    height: 100%;
+}
+
+.certified-users .card::before {
+    background: #EFEFEF;
+}
+
+
+.certified-users .card img {
+    width: 125px;
+    height: 173px;
+    position: absolute;
+    border: 1px solid;
+    left: 50%;
+    margin-left: -90px;
+    top: 60px;
+}
+
+.certified-users .card .name-plat {
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    width: 180px;
+    margin-left: -90px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.certified-users .card .name-plat div {
+    color: #666;
+}
+
+.certified-users .card .certificate {
+    position: absolute;
+    top: 360px;
+    width: 180px;
+    left: 50%;
+    font-size: 19px;
+    margin-left: -90px;
+    color: #666;
+}
+
+.color-logo span{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 2px;
+}
+
+.color-logo .blue {
+    background: rgb(56, 127, 203)
+}
+
+.color-logo .yellow {
+    background: rgb(247, 206, 68)
+}
+
+.color-logo .orange {
+    background: rgb(232, 106, 28)
+}
+
+.color-logo .red {
+    background: rgb(232, 28, 28)
+}
+
+.color-logo .gray {
+    background: rgb(196, 195, 195);
+}
+
+
+footer {
+    background: #F1F1F1;
+}
+
+footer > div {
+    display: inline-block;
+    width: 100%;
+}
+
+.socials {
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #fff;
+}
+.socials ul {
+    margin-top: 15px;
+}
+
+.socials li {
+    margin: 0 5px;
+}
+
+.fa {
+
+  text-decoration: none;
+  font-size: 30px;
+  color: rgb(255,62,17);
+}
+
+.footer-nav {
+    padding: 35px 50px 20px;
+    font-size: 18px;
+}
+
+.footer-nav ul{
+    display: flex;
+}
+.footer-nav li{
+    margin-left: 50px;
+}
+.footer-nav li:first-child{
+    margin-left: 0px;
+    width: 115px;
+}
+.footer-nav img {
+    width: 82px;
+}
+
+.external-links {
+    padding: 20px 50px 35px;
+    font-size: 18px;
+}
+
+.external-links ul{
+    display: flex;
+}
+
+.external-links li{
+    margin-left: 50px;
+}
+.external-links li:first-child{
+    margin-left: 0px;
+    width: 115px;
+}
+
+.external-links .payments li:first-child{
+    width: 165px;
+}
+
+.external-links .payments img {
+    width: 200px;
+}
+
+.external-links .logo img {
+    width: 100px;
+}
+
+.external-links .payments li:first-child{
+    margin-right: 30px;
+}
