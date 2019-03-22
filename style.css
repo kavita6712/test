@@ -4,8 +4,74 @@
 	box-sizing: border-box;
 }
 
+/*font-family Ubantu*/
+@font-face {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 300;
+    src: url(fonts/ubuntu-v12-latin-300.eot);
+    src: local("Ubuntu Light"), local("Ubuntu-Light"), url(fonts/ubuntu-v12-latin-300.eot?#iefix) format("embedded-opentype"), url(fonts/ubuntu-v12-latin-300.woff2) format("woff2"), url(fonts/ubuntu-v12-latin-300.woff) format("woff"), url(fonts/ubuntu-v12-latin-300.ttf) format("truetype"), url(fonts/ubuntu-v12-latin-300.svg#Ubuntu) format("svg")
+}
+
+@font-face {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 400;
+    src: url(fonts/ubuntu-v12-latin-regular.eot);
+    src: local("Ubuntu Regular"), local("Ubuntu-Regular"), url(fonts/ubuntu-v12-latin-regular.eot?#iefix) format("embedded-opentype"), url(fonts/ubuntu-v12-latin-regular.woff2) format("woff2"), url(fonts/ubuntu-v12-latin-regular.woff) format("woff"), url(fonts/ubuntu-v12-latin-regular.ttf) format("truetype"), url(fonts/ubuntu-v12-latin-regular.svg#Ubuntu) format("svg")
+}
+
+@font-face {
+    font-family: Ubuntu;
+    font-style: italic;
+    font-weight: 300;
+    src: url(fonts/ubuntu-v12-latin-300italic.eot);
+    src: local("Ubuntu Light Italic"), local("Ubuntu-LightItalic"), url(fonts/ubuntu-v12-latin-300italic.eot?#iefix) format("embedded-opentype"), url(fonts/ubuntu-v12-latin-300italic.woff2) format("woff2"), url(fonts/ubuntu-v12-latin-300italic.woff) format("woff"), url(fonts/ubuntu-v12-latin-300italic.ttf) format("truetype"), url(fonts/ubuntu-v12-latin-300italic.svg#Ubuntu) format("svg")
+}
+
+@font-face {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 500;
+    src: url(fonts/ubuntu-v12-latin-500.eot);
+    src: local("Ubuntu Medium"), local("Ubuntu-Medium"), url(fonts/ubuntu-v12-latin-500.eot?#iefix) format("embedded-opentype"), url(fonts/ubuntu-v12-latin-500.woff2) format("woff2"), url(fonts/ubuntu-v12-latin-500.woff) format("woff"), url(fonts/ubuntu-v12-latin-500.ttf) format("truetype"), url(fonts/ubuntu-v12-latin-500.svg#Ubuntu) format("svg")
+}
+
+@font-face {
+    font-family: Ubuntu;
+    font-style: italic;
+    font-weight: 400;
+    src: url(fonts/ubuntu-v12-latin-italic.eot);
+    src: local("Ubuntu Italic"), local("Ubuntu-Italic"), url(fonts/ubuntu-v12-latin-italic.eot?#iefix) format("embedded-opentype"), url(fonts/ubuntu-v12-latin-italic.woff2) format("woff2"), url(fonts/ubuntu-v12-latin-italic.woff) format("woff"), url(fonts/ubuntu-v12-latin-italic.ttf) format("truetype"), url(fonts/ubuntu-v12-latin-italic.svg#Ubuntu) format("svg")
+}
+
+@font-face {
+    font-family: Ubuntu;
+    font-style: italic;
+    font-weight: 500;
+    src: url(fonts/ubuntu-v12-latin-500italic.eot);
+    src: local("Ubuntu Medium Italic"), local("Ubuntu-MediumItalic"), url(fonts/ubuntu-v12-latin-500italic.eot?#iefix) format("embedded-opentype"), url(fonts/ubuntu-v12-latin-500italic.woff2) format("woff2"), url(fonts/ubuntu-v12-latin-500italic.woff) format("woff"), url(fonts/ubuntu-v12-latin-500italic.ttf) format("truetype"), url(fonts/ubuntu-v12-latin-500italic.svg#Ubuntu) format("svg")
+}
+
+@font-face {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 700;
+    src: url(fonts/ubuntu-v12-latin-700.eot);
+    src: local("Ubuntu Bold"), local("Ubuntu-Bold"), url(fonts/ubuntu-v12-latin-700.eot?#iefix) format("embedded-opentype"), url(fonts/ubuntu-v12-latin-700.woff2) format("woff2"), url(fonts/ubuntu-v12-latin-700.woff) format("woff"), url(fonts/ubuntu-v12-latin-700.ttf) format("truetype"), url(fonts/ubuntu-v12-latin-700.svg#Ubuntu) format("svg")
+}
+
+@font-face {
+    font-family: Ubuntu;
+    font-style: italic;
+    font-weight: 700;
+    src: url(fonts/ubuntu-v12-latin-700italic.eot);
+    src: local("Ubuntu Bold Italic"), local("Ubuntu-BoldItalic"), url(fonts/ubuntu-v12-latin-700italic.eot?#iefix) format("embedded-opentype"), url(fonts/ubuntu-v12-latin-700italic.woff2) format("woff2"), url(fonts/ubuntu-v12-latin-700italic.woff) format("woff"), url(fonts/ubuntu-v12-latin-700italic.ttf) format("truetype"), url(fonts/ubuntu-v12-latin-700italic.svg#Ubuntu) format("svg")
+}
+
+
 body{
-	font-size: 20px;
+	font-size: 16px;
     overflow-x: hidden;
     font-family: 'Ubuntu', sans-serif;
     font-weight: lighter;
@@ -22,7 +88,7 @@ a {
 }
 
 .row {
-    max-width: 1180px;
+    max-width: 80%;
     margin: 0 auto;
 }
 
@@ -35,7 +101,7 @@ a {
 }
 
 .top-bar {
-    position: fixed;
+    position: relative;
     background-color:#fff;
     top: 0;
     left: 0;
@@ -58,6 +124,19 @@ a {
 .top-bar button {
     margin: 0 10px;
     font-size: 16px;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 102px;
 }
 
 .left-sided {
@@ -86,30 +165,46 @@ button {
 .main-nav-tab {
     position: relative;
     top: 50px;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #34404b;
 }
-
 .main-nav-tab li {
     margin-right: 30px;
 }
+.main-nav-tab li.active a{
+        color: #FF5912;
+    }
+    .main-nav-tab li:hover a{
+        color: #FF5912;
+    }
+    .main-nav-tab li.active:after{
+        content: "";
+        display: block;
+        width: 20px;
+        border-bottom: 5px solid #ff0000;
+        margin-top: 5px;
+    }
 .main-nav-tab li:last-child {
     margin-right: 0px;
 }
 
 button.filled-vermilion {
     margin-top: 50px;
-    padding: 10px 40px;
-    background: rgb(255,62,17);
-    color: white;
+    padding: 10px 50px;
     border: none;
     display: block;
-    font-size: 18px;
+    font-size: 18px;        
+    background: #fc4111;
+    color: #fff;
 }
 
 button.border-vermilion {
     padding: 10px 40px;
-    border: 2px solid rgb(255,62,17);
+    border: 2px solid #ff0000;
     background: none;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
 .black-bg {
@@ -117,14 +212,23 @@ button.border-vermilion {
     color: #FFF;
 }
 .home {
-    margin-top: 205px;
+    /*margin-top: 205px;*/
     text-align: center;
     background-color: #F1F1F1;
-    background-image: url(assets/home-bg.png);
-    background-position-x:90%;
-    background-position-y:bottom;
+    background-image: url(assets/Banner-Base-White.png);
     background-repeat: no-repeat;
-    background-size: 15%;
+    background-position: center;
+    background-size: cover;
+}
+.img-divider{
+    position: relative;
+    bottom: -26px;
+    right: 5%;
+}
+.slider-img{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
 }
 .home div {
     margin: 160px 0;
@@ -133,11 +237,13 @@ button.border-vermilion {
     width: 100%;
 }
 .home h1 {
-    line-height: 2;
+    line-height: 56px;
+    margin-bottom: 18px;
 }
 .home p {
     line-height: 1.5;
-    max-width: 825px;
+    font-size: 24px;
+    font-weight: 400;
 }
 
 .dates ul {
@@ -168,6 +274,8 @@ button.border-vermilion {
 .about p{
     margin-top: 20px;
     line-height: 1.5; 
+    font-size: 20px;
+    font-weight: 400;
 }
 
 
@@ -204,26 +312,56 @@ button.border-vermilion {
 }
 
 .levels .content {
-    margin-top: 80px;
+    margin-top:20px;
+    font-size: 20px;
+    line-height: 29px;
+    font-weight: normal;
 }
 .levels .content .row {
     display: flex;
-    padding: 50px 0;
+    padding: 40px 0 0;
+    max-width: 100%;
+}
+
+.pd10{
+    padding-top: 10px;
+}
+
+.mt25{
+    margin-top: 25px;
 }
 
 .levels .content .col {
-    width: 50%;
+    width: 40%;
+    font-weight:bold;
+}
+
+.levels .content .col2{
+    width: 60%;
+    font-weight: normal;
 }
 
 .highlight {
-    color: rgb(232, 28, 28)
+    color: #ff5912;
 }
 .note {
-    background: rgb(253, 237, 170);
+    background: #fce689;
     padding: 25px 35px;
     display: inline-block;
     width: 450px;
+    position: relative;
 } 
+.note:before {
+    position: absolute;
+    content: "";
+    top: 66px;
+    left: -50px;
+    border-top: 33px solid #fce689;
+    border-left: 81px solid transparent;
+    z-index: 2;
+    overflow: visible;
+    transform: rotate(-52deg);
+}
 .note p {
     margin: 10px 0;
 } 
@@ -245,14 +383,18 @@ button.border-vermilion {
 
 .testimonials p {
     margin-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
 }
 .carousel-wrap {
     position: relative;
     margin-top: 50px;
+    width: 100%;
 }
 .nav-button {
     position: relative;
     width: 100%;
+    z-index: 20;
 }
 
 .arrow  {
@@ -260,6 +402,7 @@ button.border-vermilion {
     top: 175px;
     font-size: 56px;
     color: rgb(255,62,17);
+    cursor: pointer;
 }
 .left-arrow {
     left: 0px;
@@ -273,7 +416,7 @@ button.border-vermilion {
     width: 751px;
     height: 371px;
     box-shadow: 0px 1px 10px 1px #ccc;
-    margin: 0 auto;
+    margin: 0 50px;
 }
 .slide::before, 
 .slide::after {
@@ -352,15 +495,15 @@ button.border-vermilion {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
+  margin-top: 34px;
 }
 
 .certified-users .card {
     position: relative;
-    margin: 30px 15px;
-    width: 250px;
+    margin: 30px 20px;
+    width: 221px;
     height: 430px;
     box-shadow: 0px 1px 11px 0px #ccc;
 }
@@ -376,6 +519,16 @@ button.border-vermilion {
     position:absolute;
     width: 50%;
     height: 100%;
+    top: 0;
+    left: 0;
+}
+
+ .card:hover::after{
+    width: 100%;
+    -webkit-transition:all .5s linear;
+  -moz-transition:all .5s linear;
+  -o-transition:all .5s linear;
+  transition:all .5s linear;
 }
 
 .certified-users .card::before {
@@ -471,9 +624,8 @@ footer > div {
 }
 
 .fa {
-
   text-decoration: none;
-  font-size: 30px;
+  font-size: 21px;
   color: rgb(255,62,17);
 }
 
@@ -486,8 +638,24 @@ footer > div {
     display: flex;
 }
 .footer-nav li{
-    margin-left: 50px;
+    margin-left: 40px;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 400;
 }
+.footer-nav li.active a{
+        color: #FF5912;
+    }
+    .footer-nav li:hover a{
+        color: #FF5912;
+    }
+    .footer-nav li.active:after{
+        content: "";
+        display: block;
+        width: 20px;
+        border-bottom: 5px solid #ff0000;
+        margin-top: 5px;
+    }
 .footer-nav li:first-child{
     margin-left: 0px;
     width: 115px;
@@ -506,8 +674,11 @@ footer > div {
 }
 
 .external-links li{
-    margin-left: 50px;
+    margin-left: 40px;
     display: block;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 400;
 }
 .external-links li:first-child{
     margin-left: 0px;
@@ -515,11 +686,11 @@ footer > div {
 }
 
 .external-links .payments li:first-child{
-    width: 165px;
+    width: 137px;
 }
 
 .external-links .payments img {
-    width: 200px;
+    width: 170px;
 }
 
 .external-links .logo img {
@@ -527,19 +698,543 @@ footer > div {
 }
 
 .external-links .payments li:first-child{
-    margin-right: 30px;
+    margin-right: 0px;
 }
 
-@media only screen and (max-device-width: 768px) {
+.login{
+    font-size: 14px;
+    font-size: normal;
+}
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  background-color: transparent;
+  width:56%;
+  margin: 25px auto 0;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 24px;
+  padding: 14px 42px;
+  color: #ff5912;
+  font-weight: normal;
+}
+
+.tab button.active{
+  color:#3b3a3a;
+  font-weight: 700;
+}
+
+/* Change background color of buttons on hover */
+/*.tab button:hover {
+  content: "";
+  display: block;
+  width: 20px;
+  border-bottom:5px solid #ff0000;
+  margin-top: 5px;
+}*/
+
+/* Create an active/current tablink class */
+.tab button.active:after {
+  content: "";
+  display: block;
+  width: 20px;
+  border-bottom:5px solid #ff0000;
+  margin-top: 5px;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+}
+/**/
+#testimonials-slides{
+    position: relative;
+    display: inline-block;
+    -webkit-transition:all .5s linear;
+  -moz-transition:all .5s linear;
+  -o-transition:all .5s linear;
+  transition:all .5s linear;
+}
+
+#testimonials-slides .slide{
+    display: inline-block;
+    float: left;
+    opacity: 0.5;
+    transform: scale(0.9);
+    -webkit-transition:all .5s linear;
+  -moz-transition:all .5s linear;
+  -o-transition:all .5s linear;
+  transition:all .5s linear;
+}
+#testimonials-slides .slide.active{
+    opacity: 1;
     
+  transform: scale(1);
+}
+.slide-data p:before {
+    content: '"';
+    display: inline-block;
+    position: absolute;
+    left: -15px;
+    color: gray;
+    font-size: 65px;
+    top: 31px;
+}
+.icon{
+    width:20px;
+    height: auto;
+    margin-right: 7px;
+}
+.icon-mobile{
+    width: 14px;
+}
+
+.sticky .main-logo img{
+    width: 250px;
+}
+.sticky.clearfix{
+    padding: 10px 50px;
+    box-shadow: 1px 1px 10px 1px #ccc;
+}
+.sticky .right-sided .main-nav-tab{
+    top:15px;
+}
+.testimonials{
+    /*display: none;*/
+}
+/*Slider*/
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button {
+    margin-left: 0 3%;
+    width: 2rem;
+    cursor: pointer;
+}
+
+.button--inactive {
+    opacity: 0.2;
+}
+
+.button img {
+    width: 60%;
+}
+
+.cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25rem;
+}
+
+.box {
+/*     margin: -1.5rem; */
+    width: 52rem;
+    height: 20rem;
+    /*box-shadow: 0px 0px 2rem 0px #888888;
+    background-color: white;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 70px;
+    /* transition: 1s all; */
+}
+
+.box:nth-child(2n) {
+    transform: scale(0.85);
+    z-index: -1;
+}
+
+.box:nth-child(2) {
+  left: 5%;
+}
+
+.box:nth-child(4) {
+  left: -5%;
+}
+
+.box:nth-child(4n + 1) {
+    transform: scale(0.75);
+    z-index: -2;
+}
+
+.box:nth-child(1) {
+  left: 15%;
+}
+.left_click{
+    position: absolute;
+    left: 0;
+    z-index: 5;
+}
+.right_click{
+    position: absolute;
+    right: 0;
+    z-index: 5;
+}
+.box:nth-child(5) {
+  left: -15%;
+}
+
+.card__text-content {
+    text-align: center;
+    width: 75%;
+}
+
+.card__title {
+    padding: 1rem;
+}
+
+.box--hide {
+    display: none;
+}
+
+.move-out-from-left {
+    animation: moveOutLeft 0.5s ease-in-out;
+}
+
+.move-out-from-right {
+    animation: moveOutRight 0.5s ease-in-out;
+}
+
+.move-to-position5-from-left {
+    animation: moveToP5Left 0.5s ease-in-out;
+}
+
+.move-to-position4-from-left {
+    animation: moveToP4Left 0.5s ease-in-out;
+}
+
+.move-to-position3-from-left {
+    animation: moveToP3Left 0.5s ease-in-out;
+}
+
+.move-to-position2-from-left {
+    animation: moveToP2Left 0.5s ease-in-out;
+}
+
+
+.move-to-position1-from-left{
+    animation: moveToP1Left 0.5s ease-in-out;
+}
+
+.move-to-position5-from-right{
+    animation: moveToP5Right 0.5s ease-in-out;
+}
+.move-to-position4-from-right{
+    animation: moveToP4Right 0.5s ease-in-out;
+}
+.move-to-position3-from-right{
+    animation: moveToP3Right 0.5s ease-in-out;
+}
+.move-to-position2-from-right{
+    animation: moveToP2Right 0.5s ease-in-out;
+}
+.move-to-position1-from-right{
+    animation: moveToP1Right 0.5s ease-in-out;
+}
+
+@keyframes moveOutLeft {
+    0% {
+        transform: scale(0.75) translateX(0%);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.5) translateX(-150%);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0.25) translateX(0%);
+        opacity: 0;
+    }
+}
+
+@keyframes moveOutRight {
+    0% {
+        transform: scale(0.75) translateX(0%);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.5) translateX(150%);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0.25) translateX(0%);
+        opacity: 0;
+    }
+}
+
+
+@keyframes moveToP5Left {
+    from {
+        transform: scale(0.75) translateX(100%);
+    }
+    to {
+        transform: scale(0.75) translateX(0);
+    }
+}
+
+@keyframes moveToP4Left {
+    from {
+        transform: scale(0.75) translateX(100%);
+    }
+    to {
+        transform: scale(0.85) translateX(0);
+    }
+}
+
+@keyframes moveToP3Left {
+    from {
+        transform: scale(0.85) translateX(100%);
+    }
+    to {
+        transform: scale(1) translateX(0);
+    }
+}
+
+@keyframes moveToP2Left {
+    from {
+        transform: scale(1) translateX(100%);
+    }
+    to {
+        transform: scale(0.85) translateX(0);
+    }
+}
+
+@keyframes moveToP1Left {
+    from {
+        transform: scale(0.85) translateX(100%);
+    }
+    to {
+        transform: scale(0.75) translateX(0);
+    }
+}
+
+
+@keyframes moveToP1Right {
+    from {
+        transform: scale(0.75) translateX(-100%);
+    }
+    to {
+        transform: scale(0.75) translateX(0);
+    }
+}
+
+@keyframes moveToP2Right {
+    from {
+        transform: scale(0.75) translateX(-100%);
+    }
+    to {
+        transform: scale(0.85) translateX(0);
+    }
+}
+
+@keyframes moveToP3Right {
+    from {
+        transform: scale(0.85) translateX(-100%);
+    }
+    to {
+        transform: scale(1) translateX(0);
+    }
+}
+
+@keyframes moveToP4Right {
+    from {
+        transform: scale(1) translateX(-100%);
+    }
+    to {
+        transform: scale(0.85) translateX(0);
+    }
+}
+
+@keyframes moveToP5Right {
+    from {
+        transform: scale(0.85) translateX(-100%);
+    }
+    to {
+        transform: scale(0.75) translateX(0);
+    }
+}
+
+/* Portrait and Landscape */
+@media only screen and (max-device-width: 1280px) {
+    .carousel-wrap{
+        overflow: hidden;
+    }
+}
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .main-nav-tab {
+        top: 15px;
+    }
+    .home div {
+        margin: 80px 30px;
+        width: auto;
+    }
+    .home .row {
+        margin: 80px 30px;
+        width: auto;
+    }
+    h1 {
+        font-size: 32px;
+    }
+    p {
+        font-size: 20px;
+    }
+
+    .dates ul {
+        padding: 15px 80px;
+    }
+
+    .about .row,
+    .levels .row,
+    .testimonials .row,
+    .certified-users .row {
+        /*padding: 70px 80px;*/
+    }
+
+    .external-links .left-sided,
+    .external-links .right-sided {
+        float: none;
+    }
+
+    .external-links li{
+        margin-left: 10px;
+    }
+    .external-links .right-sided {
+        display: block;
+        margin-top: 30px;
+    }
+    .carousel-wrap{
+        overflow: hidden;
+        width: 100%
+    }
+    .slide-data{
+        position: relative;
+        left: 16%;
+        z-index: 1;
+        top: 20px;
+        padding: 30px;
+        line-height: 1.5;
+        width: 70%;
+        padding-bottom: 85px;
+    }
+    .testimonials p{
+        font-size: 16px;
+    }
+    .slide img{
+        left: 11%;
+        bottom: 7%;
+        margin-left: 0px;
+        width: auto;
+        height: 127px;
+        top: unset;
+    }
+    .slide{
+        width: 100%;
+        height: auto;
+        box-shadow: 0px 1px 10px 1px #ccc;
+        margin: 0 50px;
+        max-width: 600px;
+    }
+    .slide-data .name-plat{
+        position: relative;
+        left: 13%;
+    }
+    .certificate{
+        position: relative;
+        left: 13%;
+    }
+    .testimonials .color-logo{
+        position: absolute;
+        left: 18%;
+        margin-right: 0px;
+        bottom: 62px;
+    }
+}
+@media only screen and (max-device-width: 768px) {
+    .note{
+        width:100%;
+    }
+    .carousel-wrap{
+        overflow: hidden;
+        width: 100%
+    }
+    .slide-data p{
+        width: 100%;
+        margin-bottom: 22px;
+    }
+    .slide-data{
+        position: relative;
+        left: 16%;
+        z-index: 1;
+        top: 20px;
+        padding: 30px;
+        line-height: 1.5;
+        width: 70%;
+        padding-bottom: 85px;
+    }
+    .testimonials p{
+        font-size: 16px;
+    }
+    .slide img{
+        left: 11%;
+        bottom: 7%;
+        margin-left: 0px;
+        width: auto;
+        height: 127px;
+        top: unset;
+    }
+    .slide{
+        width: 100%;
+        height: auto;
+        box-shadow: 0px 1px 10px 1px #ccc;
+        margin: 0 50px;
+        max-width: 600px;
+    }
+    .slide-data .name-plat{
+        position: relative;
+        left: 13%;
+    }
+    .certificate{
+        position: relative;
+        left: 13%;
+    }
+    .testimonials .color-logo{
+        position: absolute;
+        left: 18%;
+        margin-right: 0px;
+        bottom: 62px;
+    }
     .top-bar {
         position: relative;
     }
-
-    .top-bar .left-sided {
-        float: none;
-    } 
-
+    .sticky.clearfix{
+        box-shadow: 1px 1px 10px 1px #ccc;
+    }
+    
     .top-bar .fa {
         font-size: 36px;
         margin-right: 10px;
@@ -547,31 +1242,25 @@ footer > div {
 
     .top-bar button {
         margin: 0 25px;
-        font-size: 36px;
+        font-size: 16px;
     }
     .contacts {
         border-bottom: 3px solid #EEE;
     }
 
     .contacts li {
-        font-size: 32px;
-        margin-top: 20px;
-    }
-    .top-bar .left-sided {
-        float: none;
+        font-size: 16px;
+        margin-top: 10px;
     }
     .main-logo img {
-        width: 745px;
+        width: 210px;
     }
     .right-sided {
-        margin: 40px 0;
-    }   
-    .main-nav-tab {
-        top: 0px;
-    }
+        margin: 0px 0;
+    } 
     .main-nav-tab li {
         margin-right: 30px;
-        font-size: 42px;
+        font-size: 16px;
     }
 
     .home {
@@ -589,19 +1278,21 @@ footer > div {
     }
 
     .home h1 {
-        line-height: 1.5;
-        width: 710px;
+        line-height: 43px;
+        width: 100%;
+        font-size: 31px;
+        font-weight: 500;
     }
  
     .home p {
-        line-height: 1.5;
+        line-height: 32px;
         max-width: 755px;
-        font-size: 36px;
-        margin-top: 40px;
+        font-size: 26px;
+        margin-top: 35px;
     }
     
     h1 {
-        font-size: 72px;
+        font-size: 30px;
     }
     p {
         font-size: 20px;
@@ -609,31 +1300,40 @@ footer > div {
 
     button.filled-vermilion {
         padding: 20px 100px;
-        font-size: 42px;
+        font-size: 18px;
     }
 
 
     .dates ul {
-        padding: 35px 80px;
+        /*padding: 35px 80px;*/
     }
 
     .dates li {
         margin: 0;
-        margin-top: 30px;
         display: block;
         font-size: 14px;
     }
 
     .dates li span:last-child {
-        margin-left: 350px;
+        /*margin-left: 350px;*/
+    }
+    .dates li{
+        width: 100%;
+    }
+    .left{
+        /*float: left;*/
+    }
+    .right{
+        float: right;
     }
     .dates li:last-child {
         border: none;
         margin-left: 0px;
         padding-left: 0px;
+        margin-top: 25px;
     }
     .dates li:last-child span:last-child {
-        margin-left: 92px;
+        margin-left: 0px;
     }
 
     .about p {
@@ -645,9 +1345,14 @@ footer > div {
     .levels .row,
     .testimonials .row,
     .certified-users .row {
-        padding: 70px 100px;
+        padding: 61px 0 75px;
     }
-
+    .tab{
+        width: 80%;
+    }
+    .tab button{
+        padding: 14px 30px;
+    }
     .certified-users .card {
         margin: 50px 15px;
         width: 620px;
@@ -675,8 +1380,8 @@ footer > div {
         margin-left: -200px;
     }
     .color-logo span {
-        width: 22px;
-        height: 22px;
+        width: 10px;
+        height: 10px;
         margin-right: 6px;
     }
 
@@ -761,58 +1466,195 @@ footer > div {
         width: auto;
     }
     .external-links .payments img {
-        width: 480px;
+        width: 100%;
     }
     .external-links .logo img {
         width: 280px;
     }
   }
 
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-
-    .main-nav-tab {
-        top: 40px;
+  @media only screen and (max-device-width: 767px) {
+    /*tabs*/
+    .levels .content .row{
+        display: block;
     }
-    .home div {
-        margin: 80px 30px;
-        width: auto;
+    .levels .content .col{
+        width: 100%;
     }
-    .home .row {
-        margin: 80px 30px;
-        width: auto;
+    .levels .content .col2{
+        width: 100%;
     }
-    h1 {
-        font-size: 32px;
+    .note:before{
+        top: -38px;
+        left: -5px;
+        border-top: 33px solid #fce689;
+        border-left: 62px solid transparent;
+        z-index: 2;
+        overflow: visible;
+        transform: rotate(112deg);
     }
-    p {
-        font-size: 20px;
+    .levels .row {
+        padding: 70px 0 75px;
     }
-
+    .levels .row h1{
+        text-align: left;
+        margin-left: 10px
+    }
+    .tab button {
+        padding: 14px 13px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .about p {
+        margin-top: 33.9px;
+    }
     .dates ul {
-        padding: 15px 80px;
+        padding: 31px 0;
     }
-
-    .about .row,
-    .levels .row,
-    .testimonials .row,
-    .certified-users .row {
-        padding: 70px 80px;
+    .home p {
+        line-height: 36px;
+        max-width: 755px;
+        font-size: 18px;
+        margin-top: 35px;
     }
-
-    .external-links .left-sided,
-    .external-links .right-sided {
+    .home button.filled-vermilion{
+        margin-top: 31px;
+        padding:20px 67px;
+        font-weight: 400;
+    }
+    .img-divider{
+        right: 0;
+    }
+    .slider-img{
+        width: 37%;
+        height: auto;
+    }
+    /*nav menu*/
+    .contacts li {
+        font-size: 12px;
+    }
+    .icon {
+        width: 12px;
+    }
+    .top-bar button{
+        padding: 4px 13px;
+        font-size: 12px;
+        margin: 0 0 0 19px;
+    }
+    .login {
+        font-size: 12px;
+    }
+    .contacts ul{
+        text-align: right;
+    }
+    .contacts .right-sided{
+        margin-top:11px;
+    }
+    .contacts .left-sided {
         float: none;
     }
-
-    .external-links li{
-        margin-left: 10px;
+    .top-bar .clearfix{
+        padding: 20px 40px;
     }
-    .external-links .right-sided {
+    .main-logo img{
+        width: 100%;
+    }
+    .main-nav-tab li{
+        margin-right: 12px;
+        font-size: 14px;
+    }
+    .main-nav-tab li.active a{
+        color: #FF5912;
+    }
+    .main-nav-tab li:hover a{
+        color: #FF5912;
+    }
+    .main-nav-tab li.active:after{
+        content: "";
         display: block;
-        margin-top: 30px;
+        width: 20px;
+        border-bottom: 5px solid #ff0000;
+        margin-top: 5px;
+    }
+    .main-nav-tab{
+        position: initial;
+        font-size: 14px;
+        margin-top:40px;
+    }
+    /**/
+    .tabcontent p{
+        font-size: 22px;
+        font-weight: 400;
+    }
+    .note p.mt24{
+        margin-top: 24px;
+    }
+    .course button.filled-vermilion{
+        margin-top: 33px;
+        padding: 13px 67px;
+    }
+    .tabcontent .row .col{
+        font-size: 22px;
+        font-weight: 700;
+        color: #696969;
+    }
+    .tabcontent .row .col2.course{
+        margin-top: 50px;
+    }
+    .levels .content .row{
+        padding: 43px 0 0;
+    }
+    .certified-users .card{
+        margin: 30px 15px;
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 50px 50px 33px;
+    }
+    .certified-users .card img{
+        width: 78%;
+        height: auto;
+        border: 3px solid;
+        margin-left: 0px;
+        top: 0px;
+        position: relative;
+        left: 0;
+    }
+    .certified-users .card .name-plat{
+        width: 100%;
+        margin-left: 0px;
+        font-size: 16px;
+        line-height: 1.5;
+        position: relative;
+        top: 0px;
+        left: 0;
+        margin-top: 33px;
+    }
+    .certified-users .card .name-plat div{
+        font-size:14px;
+        font-weight: 400;
+    }
+    .certified-users .card .certificate{
+        width: 100%;
+        font-size: 16px;
+        /* margin-left: -200px; */
+        position: relative;
+        top: 0px;
+        left: 0px;
+        margin: 18px 0 0;
+    }
+    .color-logo span{
+        width: 10px;
+        height: 10px;
+        margin-top: 8px;
+    }
+    .tab{
+        width: 100%;
+    }
+  }
+@media only screen and (max-device-width: 480px) {
+    .slide{
+        max-width: 350px;
+        margin: 0;
     }
 }

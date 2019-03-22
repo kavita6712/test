@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
     <title>CodeCef Test</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./style.css"><link>
-    <script type="text/javascript" src="./script.js"></script>
+    
 </head>
 <body>
     <header class="top-bar">
         <div class="contacts clearfix">
             <div class="left-sided">
                 <ul>
-                    <li class="email"><a href="#"><span class="fa fa-mail-reply"></span>ccdsap@codecef.com</a></li>
-                    <li class="mobile"><a href="#"><span class="fa fa-mobile-phone"></span>+91 93200640499</a></li>
+                    <li class="email"><a href="#"><img class="icon" src="assets/mail.png">ccdsap@codecef.com</a></li>
+                    <li class="mobile"><a href="#"><img class="icon icon-mobile" src="assets/mobile.png">+91 93200640499</a></li>
                 </ul>
             </div>
             <div class="right-sided">
-                <button>Log-in</button>
+                <a href="#" class="login">Log-in</a>
                 <button class="border-vermilion">New User</button>
             </div>
         </div>
 
-        <div class="clearfix">
+        <div id="temp"  class="clearfix">
             <div class="left-sided main-logo">
                 <img src="./assets/logo.png">
             </div>
             <nav class="right-sided">
                 <ul class="main-nav-tab">
-                    <li><a href="#">Home</a></li>
+                    <li class="active"><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Levels</a></li>
                     <li><a href="#">Details</a></li>
@@ -45,17 +46,21 @@
                 <p>Certify yourself with Codechef's Multi-Level Assessment in Data Structure & Algorithms & get globally recognized.</p>
                 <button class="filled-vermilion"> Enrol Now</button>
             </div>
+                
+        </section>
+        <section class="img-divider">
+            <img class="slider-img" src="assets/Chef.png">
         </section>
         <section class="black-bg dates">
             <div class="row">
                 <ul>
                     <li>
-                        <span>Exam Date</span>
-                        <span>31st Mar 2019</span>
+                        <span class="left">Exam Date</span>
+                        <span class="right">31st Mar 2019</span>
                     </li>
                     <li>
-                        <span>Last Date of Registration</span>
-                        <span>18 Mar 2019</span>
+                        <span class="left">Last Date of Registration</span>
+                        <span class="right">18 Mar 2019</span>
                     </li>
                 </ul>
             </div>
@@ -70,55 +75,121 @@
         <section class="levels">
             <div class="row">
                 <h1>Levels</h1>
-                <div class="tabs">
-                    <ul>
-                        <li>Foundation</li>
-                        <li>Advanced</li>
-                        <li>Expert</li>
-                    </ul>
-                </div>
-                <div class="content">
-                    <div class="">
-                        <p>This will certify that the person is fluent with the basics of algorithms and data structures and can implement them in code.</p>
-                        <div class="row">
-                            <div class="col">Free Resources to Prepare</div>
-                            <div class="col">
-                                <p>Get the entire syllabus, which is accompanied with resources on each topic with practice problems.</p>
-                                <p class="highlight">Syllabus & Resources</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                                <div class="col"></div>
-                            <div class="col">
-                                <p>Once ready, give mock to test</p>
-                                <p class="highlight">Mock Test</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Course Price</div>
-                            <div class="col">
-                                <div class="note">
-                                    <p>Rs. 3,500/-</p>
-                                    <p>Rs.2,500/-         Discounted price</p>
-                                    <p>Avail between 25 Sept - 21 Oct</p>
-                                </div>
-                                <button class="filled-vermilion">Enrol Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="tab">
+					  <button class="tablinks" onclick="openCity(event, 'Foundation')" id="defaultOpen">Foundation</button>
+					  <button class="tablinks" onclick="openCity(event, 'Advanced')">Advanced</button>
+					  <button class="tablinks" onclick="openCity(event, 'Expert')">Expert</button>
+					</div>
+
+					<div id="Foundation" class="tabcontent">
+					  <div class="content">
+	                    <div class="">
+	                        <p>This will certify that the person is fluent with the basics of algorithms and data structures and can implement them in code.</p>
+	                        <div class="row">
+	                            <div class="col">Free Resources to Prepare</div>
+	                            <div class="col2">
+	                                <p>Get the entire syllabus, which is accompanied with resources on each topic with practice problems.</p>
+	                                <p class="highlight pd10">Syllabus & Resources</p>
+	                                <div class="mt25">
+		                                <p>Once ready, give mock to test</p>
+		                                <p class="highlight pd10">Mock Test</p>
+		                            </div>
+	                            </div>
+	                        </div>
+	                        <div class="row">
+	                            <div class="col">Course Price</div>
+	                            <div class="col2 course">
+	                                <div class="note">
+	                                    <p><strike>Rs. 3,500/-</strike></p>
+	                                    <p><strong>Rs.2,500/-</strong>         Discounted price</p>
+	                                    <p class="mt24">Avail between 25 Sept - 21 Oct</p>
+	                                </div>
+	                                <button class="filled-vermilion">Enrol Now</button>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+					</div>
+
+					<div id="Advanced" class="tabcontent">
+					  <div class="content">
+	                    <div class="">
+	                        
+	                        <div class="row">
+	                            <div class="col">Free Resources to Prepare</div>
+	                            <div class="col">
+	                                <p>Get the entire syllabus, which is accompanied with resources on each topic with practice problems.</p>
+	                                <p class="highlight">Syllabus & Resources</p>
+	                            </div>
+	                        </div>
+	                        <div class="row">
+	                                <div class="col"></div>
+	                            <div class="col">
+	                                <p>Once ready, give mock to test</p>
+	                                <p class="highlight">Mock Test</p>
+	                            </div>
+	                        </div>
+	                        <div class="row">
+	                            <div class="col">Course Price</div>
+	                            <div class="col">
+	                                <div class="note">
+	                                    <p>Rs. 3,500/-</p>
+	                                    <p>Rs.2,500/-         Discounted price</p>
+	                                    <p>Avail between 25 Sept - 21 Oct</p>
+	                                </div>
+	                                <button class="filled-vermilion">Enrol Now</button>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div> 
+					</div>
+
+					<div id="Expert" class="tabcontent">
+					  <div class="content">
+	                    <div class="">
+	                        <p>This will certify that the person is fluent with the basics of algorithms and data structures and can implement them in code.</p>
+	                        <div class="row">
+	                            <div class="col">Free Resources to Prepare</div>
+	                            <div class="col">
+	                                <p>Get the entire syllabus, which is accompanied with resources on each topic with practice problems.</p>
+	                                <p class="highlight">Syllabus & Resources</p>
+	                            </div>
+	                        </div>
+	                        <div class="row">
+	                                <div class="col"></div>
+	                            <div class="col">
+	                                <p>Once ready, give mock to test</p>
+	                                <p class="highlight">Mock Test</p>
+	                            </div>
+	                        </div>
+	                        <div class="row">
+	                            <div class="col">Course Price</div>
+	                            <div class="col">
+	                                <div class="note">
+	                                    <p>Rs. 3,500/-</p>
+	                                    <p>Rs.2,500/-         Discounted price</p>
+	                                    <p>Avail between 25 Sept - 21 Oct</p>
+	                                </div>
+	                                <button class="filled-vermilion">Enrol Now</button>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+				</div>
+                
             </div>
         </section>
+        
         <section class="testimonials">
             <div class="row">
                 <h1>Testimonials</h1>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                 <div class="carousel-wrap">
                     <div class="nav-button">
-                        <div class="arrow left-arrow"> < </div>
-                        <div class="arrow right-arrow"> > </div>
+                        <div id="left-arrow" class="arrow left-arrow"> < </div>
+                        <div id="right-arrow" class="arrow right-arrow"> > </div>
                     </div>
-                    <div class="slides">
+                    <div id="testimonials-slides" class="slides">
                         <div class="slide">
                             <img src="./assets/user-0.png">
                             <div class="slide-data">
@@ -127,7 +198,41 @@
                                     <div class="">Amit Jha</div>
                                     <div class="">Software Engineer, Sharechat</div>
                                 </div>
-                                <div class="">Foundation Cartified</div>
+                                <div class="certificate">Foundation Certified</div>
+                                <div class="color-logo">
+                                    <span class="blue"></span>
+                                    <span class="gray"></span>
+                                    <span class="gray"></span>
+                                    <span class="gray"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide active">
+                            <img src="./assets/user-0.png">
+                            <div class="slide-data">
+                                <p>CCDSAP gave my talent and hard work the opportunity to interview with the top tech companies in India. CCDSAP gave my talent and hard work the opportunity to interview with the top tech companies in India.</p>
+                                <div class="name-plat">
+                                    <div class="">Amit Jha</div>
+                                    <div class="">Software Engineer, Sharechat</div>
+                                </div>
+                                <div class="certificate">Foundation Certified</div>
+                                <div class="color-logo">
+                                    <span class="blue"></span>
+                                    <span class="gray"></span>
+                                    <span class="gray"></span>
+                                    <span class="gray"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="./assets/user-0.png">
+                            <div class="slide-data">
+                                <p>CCDSAP gave my talent and hard work the opportunity to interview with the top tech companies in India. CCDSAP gave my talent and hard work the opportunity to interview with the top tech companies in India.</p>
+                                <div class="name-plat">
+                                    <div class="">Amit Jha</div>
+                                    <div class="">Software Engineer, Sharechat</div>
+                                </div>
+                                <div class="certificate">Foundation Certified</div>
                                 <div class="color-logo">
                                     <span class="blue"></span>
                                     <span class="gray"></span>
@@ -299,7 +404,7 @@
         <div class="footer-nav">
             <ul>
                 <li><a href="#"><img src="./assets/footer-logo-1.png"></a></li>
-                <li><a href="#">Home</a></li>
+                <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Levels</a></li>
                 <li><a href="#">Details</a></li>
@@ -321,11 +426,12 @@
             <div class="right-sided">
                 <ul class="payments">
                     <li>Payment Methods</li>
-                    <li><a href="#"><img src="./assets/footer-logo-3.png"><a</li>
+                    <li><a href="#"><img src="./assets/footer-logo-3.png"></a></li>
                 </ul>
             </div>
         </div>
     </footer>
+    <script type="text/javascript" src="./script.js"></script>
 </body>
 
 
